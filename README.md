@@ -1,2 +1,2 @@
 # Belajar Frontend Pemula
-I try lean frontend engineer without backend and then i share path module bundler js with node
+My learning when I was in junior high school frontend engineer without backend and then i share path module bundler js with node
