@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="shortcut icon" type="image/png" href="favicon/prima.png">
+  <title>Rekap Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/ionicons@4.4.2/dist/css/ionicons.min.css">
+  <link rel="stylesheet" type="text/css" href="components/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/compile.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark shadow fixed-top better-bootstrap-nav-left">
+    <div class="container">
+      <a class="navbar-brand" href="nota.html">
+        <img src="favicon/prima.png" style="max-height: 100%; width: 24px;" class="d-inline-block align-top" alt="">
+        Simpent
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="mx-auto w-50">
+          <form class="form-inline mr-2 my-2 my-md-0 ml-auto">
+            <input type="search" class="search-saya form-control-sm w-100 form-control" placeholder="Pencarian disini (Enter)"
+              aria-label="Pencarian disini" aria-describedby="button-search">
+          </form>
+        </div>
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="nota.html"><i class="icon ion-md-bookmarks"></i> Nota</a>
+          <a class="nav-item nav-link" href="rekap.html"><i class="icon ion-md-clipboard"></i> Rekap</a>
+          <a class="nav-item nav-link" href="transaksi.html"><i class="icon ion-md-cart"></i> Transaksi</a>
+          <div class="dropdown">
+            <a class="nav-item nav-link" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false" href="javascript:void(0)" "><i class=" icon ion-md-settings"></i> Setting</a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="profile.html">Profile</a>
+              <a class="dropdown-item" href="index.html">Keluar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5 pt-4 mb-4">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="card shadow-sm">
+          <div class="card-header bg-dark-saya text-white">
+            <strong>
+              <h5 class="font-weight-bold text-center mb-0">
+                Halaman rekap
+              </h5>
+            </strong>
+          </div>
+          <div class="card-body">
+            <div class="border rounded p-3 shadow-sm">
+              <div class="border rounded p-1 mb-2 shadow-sm">
+                <ul class="nav nav-pills nav-fill">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#stat" data-toggle="tab"><i class="icon ion-md-stats"></i>
+                      Statistik pekerjaan</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#stat1" data-toggle="tab"><i class="icon ion-md-grid"></i> Pekerjaan hari
+                      ini</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#stat2" data-toggle="tab"><i class="icon ion-md-grid"></i> Pekerjaan
+                      minggu ini</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#stat3" data-toggle="tab"><i class="icon ion-md-grid"></i> Pekerjaan
+                      bulan ini</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#stat4" data-toggle="tab"><i class="icon ion-md-grid"></i> Pekerjaan
+                      tahun ini</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-content">
+                <div id="stat" class="tab-pane fade show active">
+                  <div class="border p-2">
+                    <canvas id="line-chart" style="width: 100%; height: 400px;"></canvas>
+                  </div>
+                </div>
+                <div id="stat1" class="tab-pane fade border p-2">
+                  <table id="table-saya" class="table table-sm table-bordered table-hover table-striped w-100 text-center">
+                    <thead class="p-0 m-0">
+                      <tr>
+                        <th>
+                          Tanggal
+                        </th>
+                        <th>
+                          Nomor
+                        </th>
+                        <th>
+                          Nama konsumen
+                        </th>
+                        <th>
+                          Kasir
+                        </th>
+                        <th>
+                          Total
+                        </th>
+                        <th>
+                          Status pembayaran
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Lorem ipsum dolor sit amet</td>
+                        <td>Lorem ipsum dolor sit amet</td>
+                        <td>Lorem ipsum dolor sit amet</td>
+                        <td>Lorem ipsum dolor sit amet</td>
+                        <td>Lorem ipsum dolor sit amet</td>
+                        <td>Lorem ipsum dolor sit amet</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div id="stat2" class="tab-pane fade">
+
+                </div>
+                <div id="stat3" class="tab-pane fade">
+
+                </div>
+                <div id="stat4" class="tab-pane fade">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="components/jquery/jquery.js"></script>
+  <script type="text/javascript" src="components/chartjs/chart.js"></script>
+  <script type="text/javascript" src="components/popper/popper.js"></script>
+  <script type="text/javascript" src="components/bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="assets/js/compile.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#table-saya').DataTable();
+    });
+  </script>
+</body>
+
+</html>

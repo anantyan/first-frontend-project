@@ -1,0 +1,75 @@
+/*sidebar menu*/
+head, body, h1, h2, h3, h4, h5, h6, p, label, span {
+  font-family: 'Roboto', sans-serif;
+}
+
+.side-nav .logo-sn {
+  padding-bottom: 0rem;
+  padding-top: 1rem;
+  background: rgb(2,0,36);
+  background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+}
+
+.fixed .list-unstyled .logo-sn h2, .white-skin .fade h3 {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.collapsible .menu-item a {
+  color: #424242;
+}
+
+.side-nav .collapsible a.active, .side-nav .collapsible a:hover {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+
+.white-skin .side-nav {
+  background-color: #bbdefb;
+}
+
+/*search*/
+#custom-search {
+  border: 1px solid #bdbdbd;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  -webkit-box-shadow: 0 0 0 0;
+  box-shadow: 0 0 0 0
+}
+
+/*topbar menu*/
+#dropdown-menu {
+  padding-left: 0px;
+  padding-right: 0px
+}
+
+#dropdown-item:hover, #dropdown-item:active, #dropdown-item:focus {
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px
+}
+
+#dropdown-menu a:active, #dropdown-menu a:focus, #dropdown-menu a:hover {
+  background-color: #4285F4
+}
+
+/*form - login*/
+#custom-header {
+  font-family: 'Ubuntu', sans-serif
+}
+
+#custom-hr {
+  max-width: 100px
+}
+
+/*button*/
+.btn.btn-xs{
+  padding: 0.2rem 1.2rem;
+  font-size: .60rem;
+}

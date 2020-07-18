@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event UI | Dashboard Remake 2</title>
+    <!-- inisialisasi css -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="vendors/mdbootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="vendors/mdbootstrap/css/mdb.min.css">
+    <link rel="stylesheet" type="text/css" href="vendors/fullcalendar/dist/fullcalendar.min.css">
+    <!-- tambahan css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  </head>
+  <body>
+    <!-- content -->
+    <header>
+      <!-- navigasi -->
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark primary-color scrolling-navbar">
+        <div class="container">
+          <!-- judul -->
+          <a class="navbar-brand" href="dashboard.html">Sistem Jadwal</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportContent" aria-controls="navbarSupportContent" aria-expanded="false" aria-label="Toggle navigation" title="Menu navigasi">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportContent">
+            <!-- menu kiri -->
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a href="blank.html" class="nav-link btn-rounded">
+                  <i class="fa fa-genderless"></i> Blank Page
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="event.html" class="nav-link btn-rounded">
+                  <i class="fa fa-calendar"></i> Event
+                </a>
+              </li>
+            </ul>
+            <!-- menu kanan -->
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a href="javascript:void(0)" class="nav-link btn-rounded dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">
+                  <i class="fa fa-user"></i> Account
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdown">
+                  <div class="testimonial-card pr-2 pl-2" style="width: 300px;">
+                    <div class="card-up gradient blue-gradient lighten-1">
+                      <!-- kosongkan saja -->
+                    </div>
+                    <div class="avatar mx-auto">
+                      <img src="https://lh3.googleusercontent.com/ImkFvtN8u3_qIcqpAZw8gX9eEph6LPMCUJfyU9aQvqF9e0WFzlFUatxexUxDaYKsBfQqILLqsLPjIQ=w1855-h1857-rw-no" class="rounded-circle">
+                    </div>
+                    <div class="card-body m-0">
+                      <h5 class="text-truncate">Arya Rezza Anantya</h5>
+                      <label>Supervisi</label>
+                      <hr>
+                      <button onclick="window.location.href='./'" class="btn btn-sm btn-info btn-rounded">Logout</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="for-fixed-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-12 pb-2">
+            <div class="card">
+              <div class="card-header gradient blue-gradient">
+                <div class="text-center text-white my-2">
+                  <strong>
+                    <h5 class="text-truncate">
+                      Calendar Events  
+                    </h5>
+                  </strong>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="calendar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 pb-2">
+            <div class="card">
+              <div class="card-header gradient blue-gradient">
+                <div class="text-center text-white my-2">
+                  <strong>
+                    <h5 class="text-truncate">
+                      Keterangan
+                    </h5>
+                  </strong>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="text-truncate">
+                  <ul class="mb-0">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      
+    </footer>
+    <!-- inisialisasi js -->
+    <script type="text/javascript" src="vendors/mdbootstrap/js/jquery.min.js"></script>
+    <script type="text/javascript" src="vendors/mdbootstrap/js/popper.min.js"></script>
+    <script type="text/javascript" src="vendors/mdbootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="vendors/mdbootstrap/js/mdb.min.js"></script>
+    <script type="text/javascript" src="vendors/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="vendors/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="vendors/fullcalendar/dist/locale/id.js"></script>
+    <!-- tambahan js -->
+    <script type="text/javascript" src="assets/js/style.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var date = new Date()
+        var d    = date.getDate(),
+            m    = date.getMonth(),
+            y    = date.getFullYear()
+        $('.calendar').fullCalendar({
+          themeSystem: 'bootstrap4',
+          header    : {
+            left  : 'prev,next today',
+            center: 'title',
+            right : 'month,listWeek'
+          },
+          editable  : true,
+          eventLimit: true,
+          events    : [
+            {
+              // format time & date picker new Date(y,m,d,h,m)
+              title          : 'All Day Event',
+              start          : new Date(y, m, 1),
+              backgroundColor: '#f56954',//Merah
+              borderColor    : '#f56954' //Merah
+            },
+            {
+              title          : 'Long Event',
+              start          : new Date(y, m, d - 5),
+              end            : new Date(y, m, d - 2),
+              backgroundColor: '#f39c12',//Kuning
+              borderColor    : '#f39c12' //Kuning
+            },
+            {
+              title          : 'Meeting',
+              start          : new Date(y, m, d, 10, 30),
+              allDay         : false,
+              backgroundColor: '#0073b7',//Biru
+              borderColor    : '#0073b7' //Biru
+            },
+            {
+              title          : 'Lunch',
+              start          : new Date(y, m, d, 12, 0),
+              end            : new Date(y, m, d, 14, 0),
+              allDay         : false,
+              backgroundColor: '#00c0ef',//Aqua
+              borderColor    : '#00c0ef' //Aqua
+            },
+            {
+              title          : 'Birthday Party',
+              start          : new Date(y, m, d + 1, 19, 0),
+              end            : new Date(y, m, d + 1, 22, 30),
+              allDay         : false,
+              backgroundColor: '#00a65a',//Ijo
+              borderColor    : '#00a65a' //Ijo
+            },
+            {
+              title          : 'Click for Google',
+              start          : new Date(y, m, 28),
+              end            : new Date(y, m, 29),
+              backgroundColor: '#3a87ad',// Default
+              borderColor    : '#3a87ad',// Default
+              url            : 'event?p=detail&id=terserah'
+            }
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>

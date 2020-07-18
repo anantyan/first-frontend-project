@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="shortcut icon" type="image/png" href="favicon/prima.png">
+  <title>Profile setting</title>
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/ionicons@4.4.2/dist/css/ionicons.min.css">
+  <link rel="stylesheet" type="text/css" href="components/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/compile.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark shadow fixed-top better-bootstrap-nav-left">
+    <div class="container">
+      <a class="navbar-brand" href="nota.html">
+        <img src="favicon/prima.png" style="max-height: 100%; width: 24px;" class="d-inline-block align-top" alt="">
+        Simpent
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="mx-auto w-50">
+          <form class="form-inline mr-2 my-2 my-md-0 ml-auto">
+            <input type="search" class="search-saya form-control-sm w-100 form-control" placeholder="Pencarian disini (Enter)"
+              aria-label="Pencarian disini" aria-describedby="button-search">
+          </form>
+        </div>
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="nota.html"><i class="icon ion-md-bookmarks"></i> Nota</a>
+          <a class="nav-item nav-link" href="rekap.html"><i class="icon ion-md-clipboard"></i> Rekap</a>
+          <a class="nav-item nav-link" href="transaksi.html"><i class="icon ion-md-cart"></i> Transaksi</a>
+          <div class="dropdown">
+            <a class="nav-item nav-link" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false" href="javascript:void(0)" "><i class=" icon ion-md-settings"></i> Setting</a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="profile.html">Profile</a>
+              <a class="dropdown-item" href="index.html">Keluar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5 pt-4 mb-4">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="card shadow-sm">
+
+          <div class="card-body">
+            <form action="nota.html">
+              <div class="d-flex">
+                <div class="w-100 border p-2 m-2 rounded shadow-sm">
+                  <div class="form-group">
+                    <label for="inputNama" class="text-truncate mb-0">Nama lengkap :</label>
+                    <input type="text" class="form-control" id="inputNama" placeholder="Masukan nama anda" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputUsername" class="text-truncate mb-0">Username :</label>
+                    <input type="text" class="form-control" id="inputUsername" placeholder="Masukan username anda"
+                      required>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail" class="text-truncate mb-0">Email :</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Masukan email anda" required>
+                  </div>
+                </div>
+                <div class="w-100 border p-2 m-2 rounded shadow-sm">
+                  <label class="font-weight-bold">Ubah password</label>
+                  <div class="form-group">
+                    <label for="inputPassword" class="text-truncate mb-0">Password sebelumnya :</label>
+                    <div class="input-group">
+                      <input type="password" class="form-control show-pass-se" id="inputPassword" placeholder="Masukan password sebelunya"
+                        required>
+                      <span class="input-group-append">
+                        <button class="btn btn-outline-dark show-se" type="button">
+                          <i class="icon ion-md-eye"></i>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword" class="text-truncate mb-0">Password baru :</label>
+                    <div class="input-group mb-2">
+                      <input type="password" class="form-control show-pass" id="inputPassword" placeholder="Masukan password baru anda"
+                        required>
+                      <span class="input-group-append">
+                        <button class="btn btn-outline-dark show" type="button">
+                          <i class="icon ion-md-eye"></i>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group">
+                      <label for="inputRePassword" class="text-truncate mb-0">Konfirmasi :</label>
+                      <input type="password" class="form-control" id="inputRePassword" placeholder="Masukan kofirmasi password anda"
+                        required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="d-flex justify-content-center">
+                <input type="submit" name="Submit" class="btn btn-success shadow-sm">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="components/jquery/jquery.js"></script>
+  <script type="text/javascript" src="components/popper/popper.js"></script>
+  <script type="text/javascript" src="components/bootstrap/js/bootstrap.js"></script>
+  <script type="text/javascript" src="assets/js/compile.js"></script>
+</body>
+
+</html>

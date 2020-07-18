@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Table</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" type="text/css" href="components/mdbootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="components/mdbootstrap/css/mdb.min.css">
+    <link rel="stylesheet" type="text/css" href="components/mdbootstrap/css/addons/dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/compile.css">
+  </head>
+  <body class="fixed-sn white-skin">
+    <header>
+      <!-- topbar menu -->
+      <nav class="navbar navbar-expand-lg navbar-dark double-nav primary-color fixed-top scrolling-navbar">
+        <div class="float-left">
+          <a class="button-collapse" onclick="" data-activates="slide-out">
+            <i class="fa fa-bars text-white"></i>
+          </a>
+        </div>
+        <div class="breadcrumb-dn mr-auto">
+          <p class="text-white">Blues</p>
+        </div>
+        <ul class="nav navbar-nav nav-flex-icons ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle rounded" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Pesan">
+              <span class="badge badge-success">2</span>
+              <i class="fa fa-bell"></i>
+              <span class="d-none d-sm-inline-block">Pesan</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" id="dropdown-menu">
+              <a class="dropdown-item text-truncate" id="dropdown-item" href="javascript:void(0)" title="Pesan Email">Email baru</a>
+              <a class="dropdown-item text-truncate" id="dropdown-item" href="javascript:void(0)" title="Pesan Konfirmasi" data-toggle="modal" data-target="#modalPesanKonfirmasi">Konfirmasi email</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link rounded" href="javascript:void(0)" title="Kontak Kami">
+              <i class="fa fa-envelope"></i>
+              <span class="d-none d-sm-inline-block">Contact</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link rounded" href="javascript:void(0)" title="Pengaturan">
+              <i class="fa fa-gear"></i>
+              <span class="d-none d-sm-inline-block">Settings</span>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle rounded" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Akun Pengguna">
+              <i class="fa fa-user"></i>
+              <span>Account</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" id="dropdown-menu">
+              <a class="dropdown-item text-truncate" id="dropdown-item" href="javascript:void(0)" title="Profil">Profile</a>
+              <a class="dropdown-item text-truncate" id="dropdown-item" href="login.html" title="Keluar">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <!-- sidebar menu -->
+      <div id="slide-out" class="side-nav fixed">
+        <ul class="custom-scrollbar list-unstyled">
+          <li class="logo-sn">
+            <div class="text-center">
+              <h2 class="text-white">
+              Blues | UI
+              </h2>
+            </div>
+            <hr class="mb-0" id="custom-hr">
+          </li>
+          <li>
+            <ul class="social" style="border-bottom-width: 0px;">
+              <li class="pb-0 pt-0"><a href="javascript:void(0)" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
+              <li class="pb-0 pt-0"><a href="javascript:void(0)" class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i></a></li>
+              <li class="pb-0 pt-0"><a href="javascript:void(0)" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
+              <li class="pb-0 pt-0"><a href="javascript:void(0)" class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a></li>
+            </ul>
+            <hr class="mb-0 mt-0">
+          </li>
+          <li>
+            <ul class="collapsible collapsible-accordion custom-scrollbar">
+              <li class="menu-item">
+                <a class="collapsible-header waves-effect arrow-r" href="./">
+                  Dashboard
+                </a>
+              </li>
+              <li class="menu-item">
+                <a class="collapsible-header waves-effect arrow-r" href="./table.html">
+                  Table
+                </a>
+              </li>
+              <li class="menu-item">
+                <a class="collapsible-header waves-effect arrow-r" href="./page.html">
+                  Page
+                </a>
+              </li>
+              <li class="menu-item">
+                <a class="collapsible-header waves-effect arrow-r">
+                  Dropdown Menu
+                  <i class="fa fa-angle-down rotate-icon"></i>
+                </a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li>
+                      <a href="javascript:void(0)" class="waves-effect">Sub Menu 1</a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)" class="waves-effect">Sub Menu 2</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <div class="sidenav-bg mask-strong"></div>
+      </div>
+    </header>
+    <main>
+      <!-- content -->
+      <div class="container-fluid">
+        <div class="row">
+          <!-- content table -->
+          <div class="col-lg-12 col-md-12 col-sm-12 pb-3">
+            <div class="card">
+              <div class="card-header gradient blue-gradient">
+                <div class="text-white text-center my-2">
+                  <strong>
+                    <h5 class="text-truncate">
+                      Table Biasa
+                    </h5>
+                  </strong>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-sm table-bordered table-hover mb-0">
+                    <thead class="grey lighten-2">
+                      <tr>
+                        <th>#</th>
+                        <th>First</th>
+                        <th>Last</th>
+                        <th>Handle</th>
+                        <th>Proses</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>
+                          <a href="javascript:void(0)" class="btn btn-warning btn-xs btn-rounded" data-toggle="modal" data-target="#modalForm">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>
+                          <a href="javascript:void(0)" class="btn btn-warning btn-xs btn-rounded" data-toggle="modal" data-target="#modalForm">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                        <td>
+                          <a href="javascript:void(0)" class="btn btn-warning btn-xs btn-rounded" data-toggle="modal" data-target="#modalForm">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tfoot class="grey lighten-2">
+                    <tr>
+                      <th>#</th>
+                      <th>First</th>
+                      <th>Last</th>
+                      <th>Handle</th>
+                      <th>Proses</th>
+                    </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sm-12 pb-3">
+            <div class="card">
+              <div class="card-header gradient blue-gradient">
+                <div class="text-white text-center my-2">
+                  <strong>
+                    <h5 class="text-truncate">
+                      Table using dataTables
+                    </h5>
+                  </strong>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="dataTables table table-sm table-striped table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th class="th-sm">Name
+                          <i class="fa fa-sort float-right" aria-hidden="true"></i>
+                        </th>
+                        <th class="th-sm">Position
+                          <i class="fa fa-sort float-right" aria-hidden="true"></i>
+                        </th>
+                        <th class="th-sm">Office
+                          <i class="fa fa-sort float-right" aria-hidden="true"></i>
+                        </th>
+                        <th class="th-sm">Salary
+                          <i class="fa fa-sort float-right" aria-hidden="true"></i>
+                        </th>
+                        <th>
+                          Proses
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>$320,800</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>$170,750</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>$86,000</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>$433,060</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>$320,800</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>$170,750</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>$86,000</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>$433,060</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>$320,800</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>$170,750</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>$86,000</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>$433,060</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>$320,800</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>$170,750</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>$86,000</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>$433,060</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>$320,800</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>$170,750</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>$86,000</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>$433,060</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>$320,800</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>$170,750</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>$86,000</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>$433,060</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                      <th>
+                        Name
+                      </th>
+                      <th>
+                        Position
+                      </th>
+                      <th>
+                        Office
+                      </th>
+                      <th>
+                        Salary
+                      </th>
+                      <th>
+                        Proses
+                      </th>
+                    </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Modal -->
+    <div class="modal fade" id="modalPesanKonfirmasi" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="text-truncate p-2">
+              <h3 class="font-weight-bold">Konfirmasi Email dari:</h3>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="d-flex justify-content-center">
+              <button class="btn rounded btn-primary w-100" onclick="window.location.href='javascript:void(0)'" title="Konfirmasi email">Konfirmasi</button>
+            </div>
+            <div class="text-truncate py-1 px-2">
+              <label class="mb-0">Questions? Email at <a href="">arya@email.com</a></label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      
+    </footer>
+    <script type="text/javascript" src="components/mdbootstrap/js/jquery.min.js"></script>
+    <script type="text/javascript" src="components/mdbootstrap/js/popper.min.js"></script>
+    <script type="text/javascript" src="components/mdbootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="components/mdbootstrap/js/mdb.min.js"></script>
+    <script type="text/javascript" src="components/mdbootstrap/js/addons/dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/js/compile.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.dataTables').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+      });
+    </script>
+  </body>
+</html>

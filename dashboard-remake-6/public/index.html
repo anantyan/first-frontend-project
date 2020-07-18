@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="shortcut icon" type="image/png" href="./favicon/prima.png">
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/login.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/ionicons@4.4.2/dist/css/ionicons.min.css">
+</head>
+<body>
+  <div class="container d-flex justify-content-center">
+    <div class="row col-lg-8 col-md-8 col-sm-12 mt-5 pt-5 d-flex justify-content-center">
+      <div class="card shadow w-50">
+        <div class="card-body rounded background-saya">
+          <div class="d-flex justify-content-center pt-2 pb-4">
+            <img src="./favicon/prima.png" class="rounded-circle bg-white shadow-sm" alt="logo-saya" style="width: 128px; height: 128px;">
+          </div>
+          <form action="./dashboard.html" id="form-masuk">
+            <div class="form-group mb-1">
+              <input type="test" class="form-control shadow-sm" required placeholder="Masukan Username anda">
+            </div>
+            <div class="form-group mb-1">
+              <div class="input-group">
+                <input type="password" class="form-control shadow-sm" required placeholder="Masukan Password anda" id="masuk-show-pass">
+                <span class="input-group-append">
+                  <button class="btn btn-outline-yellow-saya" type="button" id="masuk-show">
+                    <i class="icon ion-md-eye"></i>
+                  </button>
+                </span>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-yellow-saya shadow-sm w-100 font-weight-bold mb-1">Masuk</button>
+          </form>
+          <form action="./dashboard.html" id="form-daftar" style="display: none;">
+            <div class="form-group mb-1">
+              <input type="test" class="form-control shadow-sm" required placeholder="Masukan Username anda">
+            </div>
+            <div class="form-group mb-1">
+              <div class="input-group">
+                <input type="password" class="form-control shadow-sm" required placeholder="Masukan Password anda" id="daftar-show-pass">
+                <span class="input-group-append">
+                  <button class="btn btn-outline-yellow-saya" type="button" id="daftar-show">
+                    <i class="icon ion-md-eye"></i>
+                  </button>
+                </span>
+              </div>
+            </div>
+            <div class="form-group mb-1">
+              <div class="input-group">
+                <input type="password" class="form-control shadow-sm" required placeholder="Masukan Password anda" id="daftar-show-re-pass">
+                <span class="input-group-append">
+                  <button class="btn btn-outline-yellow-saya" type="button" id="daftar-show-re">
+                    <i class="icon ion-md-eye"></i>
+                  </button>
+                </span>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-yellow-saya shadow-sm w-100 font-weight-bold mb-1">Daftar</button>
+          </form>
+          <button type="button" class="btn btn-primary shadow-sm w-100 font-weight-bold mb-1" data-toggle="collapse" data-target="#masuk" id="btn-masuk" style="display: none;">Masuk</button>
+          <button type="button" class="btn btn-primary shadow-sm w-100 font-weight-bold mb-1" data-toggle="collapse" data-target="#daftar" id="btn-daftar">Daftar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./assets/js/login.min.js"></script>
+  <script>
+    $(()=>{
+      $('body').on('click','#btn-daftar', function(){
+        $('#form-daftar').slideToggle().show();
+        $('#btn-masuk').slideToggle().show();
+        $('#form-masuk').slideToggle().hide();
+        $('#btn-daftar').slideToggle().hide();
+      });
+      $('body').on('click','#btn-masuk', function(){
+        $('#form-masuk').slideToggle().show();
+        $('#btn-daftar').slideToggle().show();
+        $('#form-daftar').slideToggle().hide();
+        $('#btn-masuk').slideToggle().hide();
+      });
+    });
+  </script>
+</body>
+</html>

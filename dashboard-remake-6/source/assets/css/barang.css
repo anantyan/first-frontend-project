@@ -1,0 +1,20 @@
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+  color: #fff;
+  background-color: #FFDE03;;
+}
+
+a {
+  color: #495057;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+form div.border.borderan-saya{
+  background-color: rgba(0,0,0,.03);
+}

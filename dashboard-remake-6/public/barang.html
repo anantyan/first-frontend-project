@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Barang Page</title>
+  <link rel="shortcut icon" type="image/png" href="./favicon/prima.png">
+  <link rel="stylesheet" href="https://unpkg.com/ionicons@4.4.2/dist/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../bower_components/datatables/media/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="./assets/css/sidebar.min.css">
+  <link rel="stylesheet" href="./assets/css/barang.min.css">
+</head>
+
+<body>
+    <div class="d-flex">
+
+      <!-- sidebar  -->
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <img src="./favicon/prima.png" class="rounded-circle bg-white shadow-sm" alt="logo-saya">
+          <div class="profile-circle-saya d-flex align-self-end">
+            <ul class="mb-0 pl-0 mt-1 text-truncate">
+              <li id="nama"><span class=" font-weight-bold" title="Arya Rezza Anantya">Arya Rezza Anantya</span></li>
+              <li id="jabatan"><span title="Front End/UI & UX Design">Front End/UI & UX Design</span></li>
+            </ul>
+          </div>
+        </div>
+        <ul class="list-unstyled components">
+          <li>
+            <a href="javascript:void(0)" onclick="window.location.href='./dashboard.html'">Dashboard</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" onclick="window.location.href='./barang.html'">Barang</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" onclick="window.location.href='./konsumen.html'">Data konsumen</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" onclick="window.location.href='./transaksi.html'">Data transaksi</a>
+          </li>
+          <li>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Multi menu</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+              <li>
+                <a href="#">Menu 1</a>
+              </li>
+              <li>
+                <a href="#">Menu 2</a>
+              </li>
+              <li>
+                <a href="#">Menu 3</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+  
+      <!-- content  -->
+      <div id="content">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-blue-saya">
+          <div class="container-fluid">
+            <a href="javascript:void(0)" id="sidebarCollapse">
+              <i class="icon ion-md-menu ion-lg text-white"></i>
+            </a>
+            <span class="navbar-brand text-white pl-3">
+              Dashboard
+            </span>
+            <a href="javascript:void(0)" class="d-inline-block d-sm-none" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="icon ion-md-more ion-lg text-white"></i>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:void(0)">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:void(0)">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container-fluid pt-4">
+          
+          <!-- isi content -->
+          <div class="rom">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="card shadow-sm">
+                <div class="card-header text-center">
+                  <span class="font-weight-bold my-2">Halaman barang</span>
+                  <button type="button" class="close" data-toggle="collapse" data-target="#collapse-saya" aria-controls="collapse-saya" aria-label="Minimize"><span>&times;</span></button>
+                </div>
+                <div class="card-body collapse show" id="collapse-saya">
+
+                  <div class="border rounded p-2">
+                    <ul class="nav nav-pills nav-fill">
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#inputBarang" data-toggle="tab">Input barang</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#tableUtama" data-toggle="tab">Tabel utama</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#barangMasuk" data-toggle="tab">Barang masuk</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#barangKeluar" data-toggle="tab">Barang keluar</a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="tab-content mt-1">
+                    <div id="inputBarang" class="tab-pane fade show active">
+                      <div class="border rounded p-2">
+                        <form action="" method="post">
+                          <div class="border rounded px-3 pt-3 mb-2 borderan-saya">
+                            <div class="form-group row mb-0">
+                              <div class="col-6">
+                                <label for="nama-barang">Nama barang</label>
+                              </div>
+                              <div class="col-6">
+                                <label for="harga-barang">Jenis barang</label>
+                              </div>
+                            </div>
+                            <div id="formBarang">
+                              <div class="form-group row formSayaSaja">
+                                <div class="col-6">
+                                  <input type="text" name="nama_barang" required class="form-control form-control-sm">
+                                </div>
+                                <div class="col-6">
+                                  <input type="text" name="kategori_barang" required class="form-control form-control-sm">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group row mb-0">
+                              <div class="col-3">
+                                <label for="satuan1">Satuan</label>
+                              </div>
+                              <div class="col-3">
+                                <label for="isi1">Isi Satuan</label>
+                              </div>
+                              <div class="col-6">
+                                <label for="harga_jual1">Harga Jual</label>
+                              </div>
+                            </div>
+                            <div id="formBarang">
+                              <div class="form-group row formSayaSaja">
+                                <div class="col-3">
+                                  <input type="text" name="satuan" required class="form-control form-control-sm">
+                                </div>
+                                <div class="col-3">
+                                  <input type="text" name="isi" required class="form-control form-control-sm">
+                                </div>
+                                <div class="col-6">
+                                  <input type="text" name="harga_jual" required class="form-control form-control-sm">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group row mb-0">
+                              <div class="col-12">
+                                <label for="deskripsi">Deskripsi</label>
+                              </div>
+                            </div>
+                            <div class="form-group row formSayaSaja">
+                                <div class="col-12">
+                                  <textarea name="deskripsi" class="form-control" rows="4"></textarea>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="row mb-0">
+                            <div class="btn-group col-12" role="group">
+                              <button type="reset" class="btn btn-warning shadow-sm w-100">Reset</button>
+                              <button type="submit" class="btn btn-primary shadow-sm w-100">Simpan</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div id="tableUtama" class="tab-pane fade">
+                      <div class="border rounded p-1">
+                        <table class="table-saya table table-sm table-bordered table-hover w-100 text-center">
+                          <thead>
+                            <tr>
+                              <td>Nama Barang</td>
+                              <td>Jenis Barang</td>
+                              <td>Stok</td>
+                              <td>Actions</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td style="width: 15%;">
+                                <button type="button" class="btn btn-sm btn-warning text-white shadow-sm"><i class="icon ion-md-create"></i></button>
+                                <button type="button" class="btn btn-sm btn-danger text-white shadow-sm"><i class="icon ion-md-trash"></i></button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div id="barangMasuk" class="tab-pane fade">
+                      <div class="border rounded p-1">
+                        <table class="table-saya table table-sm table-bordered table-hover w-100 text-center">
+                          <thead>
+                            <tr>
+                              <td>Nama Barang</td>
+                              <td>Jenis Barang</td>
+                              <td>Stok</td>
+                              <td>Actions</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td style="width: 15%;">
+                                <button type="button" class="btn btn-sm btn-warning text-white shadow-sm"><i class="icon ion-md-create"></i></button>
+                                <button type="button" class="btn btn-sm btn-danger text-white shadow-sm"><i class="icon ion-md-trash"></i></button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div id="barangKeluar" class="tab-pane fade">
+                      <div class="border rounded p-1">
+                        <table class="table-saya table table-sm table-bordered table-hover w-100 text-center">
+                          <thead>
+                            <tr>
+                              <td>Nama Barang</td>
+                              <td>Jenis Barang</td>
+                              <td>Stok</td>
+                              <td>Actions</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td style="width: 15%;">
+                                <button type="button" class="btn btn-sm btn-warning text-white shadow-sm"><i class="icon ion-md-create"></i></button>
+                                <button type="button" class="btn btn-sm btn-danger text-white shadow-sm"><i class="icon ion-md-trash"></i></button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+  <script src="../bower_components/datatables/media/js/dataTables.bootstrap4.min.js"></script>
+  <script src="./assets/js/sidebar.min.js"></script>
+  <script src="./assets/js/barang.min.js"></script>
+  <script>
+    $(()=>{
+      $('.table-saya').dataTable();
+    });
+  </script>
+</body>
+
+</html>

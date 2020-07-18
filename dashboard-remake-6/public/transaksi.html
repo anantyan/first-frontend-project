@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="shortcut icon" type="image/png" href="./favicon/prima.png">
+  <link rel="stylesheet" href="../bower_components/datatables/media/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="./assets/css/sidebar.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/ionicons@4.4.2/dist/css/ionicons.min.css">
+</head>
+<body>
+  <div class="d-flex">
+    <!-- sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+          <img src="./favicon/prima.png" class="rounded-circle bg-white shadow-sm" alt="logo-saya">
+          <div class="profile-circle-saya d-flex align-self-end">
+            <ul class="mb-0 pl-0 mt-1 text-truncate">
+              <li id="nama"><span class=" font-weight-bold" title="Arya Rezza Anantya">Arya Rezza Anantya</span></li>
+              <li id="jabatan"><span title="Front End/UI & UX Design">Front End/UI & UX Design</span></li>
+            </ul>
+          </div>
+        </div>
+        <ul class="list-unstyled components">
+          <li>
+            <a href="javascript:void(0)" onclick="window.location.href='./dashboard.html'">Dashboard</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" onclick="window.location.href='./barang.html'">Barang</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" onclick="window.location.href='./konsumen.html'">Data konsumen</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" onclick="window.location.href='./transaksi.html'">Data transaksi</a>
+          </li>
+          <li>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Multi menu</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+              <li>
+                <a href="#">Menu 1</a>
+              </li>
+              <li>
+                <a href="#">Menu 2</a>
+              </li>
+              <li>
+                <a href="#">Menu 3</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+  
+      <!-- content  -->
+      <div id="content">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-blue-saya">
+          <div class="container-fluid">
+            <a href="javascript:void(0)" id="sidebarCollapse">
+              <i class="icon ion-md-menu ion-lg text-white"></i>
+            </a>
+            <span class="navbar-brand text-white pl-3">
+              Dashboard
+            </span>
+            <a href="javascript:void(0)" class="d-inline-block d-sm-none" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="icon ion-md-more ion-lg text-white"></i>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:void(0)">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="javascript:void(0)">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container-fluid pt-4">
+        
+        <!-- isi content -->
+        <div class="rom">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card shadow-sm">
+              <div class="card-header d-flex justify-content-between">
+                <button type="button" onclick="window.location.href='input-transaksi.html'" class="btn btn-primary shadow-sm" data-target="#tambah-data-konsumen" data-toggle="modal"><span class="py-2">Tambah data</span></button>
+                <span class="font-weight-bold my-2">Data konsumen</span>
+                <button type="button" class="close" data-toggle="collapse" data-target="#collapse-saya" aria-controls="collapse-saya" aria-label="Minimize"><span>&times;</span></button>
+              </div>
+              <div class="card-body collapse show" id="collapse-saya">
+
+                <!-- isi table -->
+                <table id="table-saya" class="table table-sm table-bordered table-hover w-100 text-center">
+                  <thead>
+                    <tr>
+                      <td rowspan="2">Nama</td>
+                      <td rowspan="2">Alamat penerima</td>
+                      <td rowspan="2">Nomor HP</td>
+                      <td rowspan="2">Jenis transaksi</td>
+                      <td colspan="2" style="width: 25%;">Barang</td>
+                      <td rowspan="2">Action</td>
+                    </tr>
+                    <tr>
+                      <td>Nama barang</td>
+                      <td>Harga barang</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td style="width: 15%;">
+                        <button type="button" class="btn btn-sm btn-warning text-white shadow-sm"><i class="icon ion-md-create"></i></button>
+                        <button type="button" class="btn btn-sm btn-danger text-white shadow-sm"><i class="icon ion-md-trash"></i></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script type="text/javascript" src="../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="../bower_components/datatables/media/js/dataTables.bootstrap4.min.js"></script>
+  <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script type="text/javascript" src="./assets/js/sidebar.min.js"></script>
+  <script type="text/javascript">
+    $(()=>{
+      $('#table-saya').dataTable();
+    });
+  </script>
+</body>
+</html>

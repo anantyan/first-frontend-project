@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank | Dashboard Remake 2</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="vendors/mdbootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="vendors/mdbootstrap/css/mdb.min.css">
+    <link rel="stylesheet" type="text/css" href="vendors/mdbootstrap/css/addons/dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <style type="text/css">
+      .modal-custom-lg{
+        max-width: 650px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- navbar -->
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark primary-color scrolling-navbar">
+        <div class="container">
+          <!-- judul -->
+          <a class="navbar-brand" href="dashboard.html">Sistem Jadwal</a>
+          <!-- /judul -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- menu kiri -->
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link btn-rounded" href="blank.html">
+                  <i class="fa fa-genderless"></i> Blank Page
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn-rounded" href="event.html">
+                  <i class="fa fa-calendar"></i> Events
+                </a>
+              </li>
+            </ul>
+            <!-- /menu kiri -->
+            <!-- menu kanan -->
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link btn-rounded dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  <i class="fa fa-user"></i> Account
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdown">
+                  <div class="testimonial-card pr-2 pl-2" style="width: 300px;">
+                    <div class="card-up gradient blue-gradient lighten-1">
+                      <!-- kosongkan saja -->
+                    </div>
+                    <div class="avatar mx-auto">
+                      <img src="https://lh3.googleusercontent.com/ImkFvtN8u3_qIcqpAZw8gX9eEph6LPMCUJfyU9aQvqF9e0WFzlFUatxexUxDaYKsBfQqILLqsLPjIQ=w1855-h1857-rw-no" class="rounded-circle">
+                    </div>
+                    <div class="card-body m-0">
+                      <h5 class="text-truncate">Arya Rezza Anantya</h5>
+                      <label>Supervisi</label>
+                      <hr>
+                      <button onclick="window.location.href='./'" class="btn btn-sm btn-info btn-rounded">Logout</button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <!-- /menu kanan -->
+          </div>
+        </div>
+      </nav>
+      <!-- /navbar -->
+    </header>
+    <main class="for-fixed-top">
+      <div class="container">
+        <!-- content -->
+        <div class="row">
+          <!-- kiye form validation -->
+          <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+            <div class="card">
+              <!-- kiye endas -->
+              <div class="card-header gradient blue-gradient">
+                <div class="text-white text-center my-2">
+                  <strong>
+                    <h5 class="text-truncate">
+                      Form Validation
+                    </h5>
+                  </strong>
+                </div>
+              </div>
+              <!-- /kiye endas -->
+              <!-- kiye tubuh -->
+              <div class="card-body">
+                <form class="text-center border border-light p-2 rounded">
+                  <input type="text" name="nama" placeholder="Nama" class="form-control mb-2">
+                  <input type="email" name="email" placeholder="Email" class="form-control mb-2">
+                  <input type="text" name="username" placeholder="Username" class="form-control mb-2">
+                  <input type="password" name="password" placeholder="Password" class="form-control mb-2">
+                  <div class="form-group mb-2">
+                    <textarea class="form-control" rows="4" name="Alamat" placeholder="Alamat"></textarea>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-4">
+                      <input type="text" name="tempat_lahir" placeholder="Tempat Lahir" class="form-control mb-2">
+                    </div>
+                    <div class="col-4">
+                      <input placeholder="Tanggal Lahir" type="tanggal_lahir" class="form-control datePicker mb-2">
+                    </div>
+                    <div class="col-4">
+                      <input placeholder="Time Picker" type="time_picker" class="form-control timePicker mb-2">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-4">
+                      <select class="browser-default custom-select mb-2">
+                        <option value="" disabled selected="">Jenis Kelamin</option>
+                        <option value="L">Laki-laki</option>
+                        <option value="P">Perempuan</option>
+                      </select>
+                    </div>
+                    <div class="col-8">
+                      <select class="browser-default custom-select mb-2">
+                        <option value="" disabled selected="">Agama</option>
+                        <option value="Islam">Islam</option>
+                        <option value="Kristen">Kristen</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Buddha">Buddha</option>
+                        <option value="Lainnya">Lainnya</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="file-field mb-2">
+                    <div class="btn btn-success btn-sm btn-rounded">
+                        <span>Pilih file</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                       <input class="file-path validate form-control" type="text" name="gambar" placeholder="Upload your file">
+                    </div>
+                  </div>
+                  <select class="browser-default custom-select mb-2">
+                    <option value="" disabled selected="">Jabatan</option>
+                    <option value="Supervisi">Supervisi</option>
+                    <option value="Staf">Staf</option>
+                  </select>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="default">
+                    <label class="custom-control-label" for="default">Bonus buat anda!</label>
+                  </div>
+                  <hr>
+                  <input type="reset" class="btn btn-sm btn-rounded btn-warning" value="Nggo ngreset!">
+                  <input type="button" class="btn btn-sm btn-rounded btn-info" value="Click disini aja!">
+                </form>
+              </div>
+              <!-- /kiye tubuh -->
+            </div>
+          </div>
+          <!-- /kiye form validation -->
+          <!-- table -->
+          <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+            <div class="card">
+              <div class="card-header gradient blue-gradient">
+                <div class="text-white text-center my-2">
+                  <strong>
+                    <h5 class="text-truncate">
+                      Table Biasa
+                    </h5>
+                  </strong>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-sm table-bordered table-hover">
+                    <thead class="grey lighten-2">
+                      <tr>
+                        <th>#</th>
+                        <th>First</th>
+                        <th>Last</th>
+                        <th>Handle</th>
+                        <th>Proses</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>
+                          <a href="javascript:void(0)" class="btn btn-warning btn-xs btn-rounded" data-toggle="modal" data-target="#modalForm">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>
+                          <a href="javascript:void(0)" class="btn btn-warning btn-xs btn-rounded" data-toggle="modal" data-target="#modalForm">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                        <td>
+                          <a href="javascript:void(0)" class="btn btn-warning btn-xs btn-rounded" data-toggle="modal" data-target="#modalForm">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tfoot class="grey lighten-2">
+                    <tr>
+                      <th>#</th>
+                      <th>First</th>
+                      <th>Last</th>
+                      <th>Handle</th>
+                      <th>Proses</th>
+                    </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /table -->
+        </div>
+        <!-- modalEdit -->
+        <div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-custom-lg modal-notify modal-primary" role="document">
+            <div class="modal-content">
+              <div class="modal-header text-center text-white">
+                <h4 class="modal-title w-100 font-weight-bold">Form</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form class="text-right border border-light p-2 rounded">
+                  <div class="form-row pb-2">
+                    <label class="col-2 col-form-label text-truncate" title="Nama">Nama</label>
+                    <div class="col-10">
+                      <input type="text" name="nama" placeholder="Nama" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-row pb-2">
+                    <label class="col-2 col-form-label text-truncate" title="Email">Email</label>
+                    <div class="col-10">
+                      <input type="email" name="email" placeholder="Email" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-row pb-2">
+                    <label class="col-2 col-form-label text-truncate" title="Username">Username</label>
+                    <div class="col-10">
+                      <input type="text" name="username" placeholder="Username" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-row pb-2">
+                    <label class="col-2 col-form-label text-truncate" title="Password">Password</label>
+                    <div class="col-10">
+                      <input type="password" name="password" placeholder="Password" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-row pb-2">
+                    <label class="col-2 col-form-label text-truncate" title="Alamat">Alamat</label>
+                    <div class="col-10">
+                      <textarea class="form-control" rows="4" name="Alamat" placeholder="Alamat"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-row pb-2">
+                    <label class="col-2 col-form-label text-truncate" title="Tempat Tanggal Lahir & Waktu">TTL & Waktu</label>
+                    <div class="col-4">
+                      <input type="text" name="tempat_lahir" placeholder="Tempat Lahir" class="form-control">
+                    </div>
+                    <div class="col-4">
+                      <input placeholder="Tanggal Lahir" type="tanggal_lahir" class="form-control datePicker">
+                    </div>
+                    <div class="col-2">
+                      <input placeholder="Waktu" type="time_picker" class="form-control timePicker">
+                    </div>
+                  </div>
+                  <div class="form-row pb-2">
+                    <label class="col-2 col-form-label text-truncate" title="Jenis Kelamin">Jenis Kelamin</label>
+                    <div class="col-4">
+                      <select class="browser-default custom-select mb-2">
+                        <option value="" disabled selected="">Jenis Kelamin</option>
+                        <option value="L">Laki-laki</option>
+                        <option value="P">Perempuan</option>
+                      </select>
+                    </div>
+                    <label class="col-2 col-form-label text-truncate" title="Agama">Agama</label>
+                    <div class="col-4">
+                      <select class="browser-default custom-select mb-2">
+                        <option value="" disabled selected="">Agama</option>
+                        <option value="Islam">Islam</option>
+                        <option value="Kristen">Kristen</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Buddha">Buddha</option>
+                        <option value="Lainnya">Lainnya</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row file-field pb-2">
+                    <label class="col-2 col-form-label text-truncate" title="Upload Foto">Pilih File</label>
+                    <div class="col-10">
+                      <div class="btn btn-success btn-xs">
+                        <span>Pilih</span>
+                        <input type="file">
+                      </div>
+                      <div class="file-path-wrapper">
+                        <input class="file-path validate form-control" type="text" name="gambar" placeholder="Upload your file">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row pb-2">
+                    <label class="col-2 col-form-label text-truncate" title="Jabatan">Jabatan</label>
+                    <div class="col-10">
+                      <select class="browser-default custom-select">
+                        <option value="" disabled selected="">Jabatan</option>
+                        <option value="Supervisi">Supervisi</option>
+                        <option value="Staf">Staf</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="custom-control custom-checkbox text-center">
+                    <input type="checkbox" class="custom-control-input" id="checkbox">
+                    <label class="custom-control-label" for="checkbox">Bonus buat anda!</label>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                <button class="btn btn-rounded btn-success btn-sm" onclick="window.location.href='javascript:void(0)'">Kirim</button>
+                <button class="btn btn-rounded btn-danger btn-sm" onclick="window.location.href='javascript:void(0)'" data-dismiss="modal">Tutup</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /modalEdit -->
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-12 mb-4">
+            <div class="card">
+              <div class="card-header gradient blue-gradient">
+                <div class="text-white text-center my-2">
+                  <strong>
+                    <h5 class="text-truncate">
+                      Table dataTables
+                    </h5>
+                  </strong>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="dataTables table table-sm table-striped table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th class="th-sm">Name
+                          <i class="fa fa-sort float-right" aria-hidden="true"></i>
+                        </th>
+                        <th class="th-sm">Position
+                          <i class="fa fa-sort float-right" aria-hidden="true"></i>
+                        </th>
+                        <th class="th-sm">Office
+                          <i class="fa fa-sort float-right" aria-hidden="true"></i>
+                        </th>
+                        <th class="th-sm">Salary
+                          <i class="fa fa-sort float-right" aria-hidden="true"></i>
+                        </th>
+                        <th>
+                          Proses
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>$320,800</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>$170,750</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>$86,000</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>$433,060</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>$320,800</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>$170,750</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>$86,000</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>$433,060</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>$320,800</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>$170,750</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>$86,000</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>$433,060</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>$320,800</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>$170,750</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>$86,000</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>$433,060</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>$320,800</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>$170,750</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>$86,000</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>$433,060</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>$320,800</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>$170,750</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>$86,000</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Cedric Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>$433,060</td>
+                        <td>
+                          <a href="#" class="btn btn-warning btn-xs btn-rounded">Edit</a>
+                          <a href="#" class="btn btn-danger btn-xs btn-rounded">Hapus</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                      <th>
+                        Name
+                      </th>
+                      <th>
+                        Position
+                      </th>
+                      <th>
+                        Office
+                      </th>
+                      <th>
+                        Salary
+                      </th>
+                      <th>
+                        Proses
+                      </th>
+                    </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
+            <div class="card testimonial-card">
+              <div class="card-up gradient blue-gradient lighten-1">
+                <!-- kosongkan saja -->
+              </div>
+              <div class="avatar mx-auto">
+                <img src="https://lh3.googleusercontent.com/ImkFvtN8u3_qIcqpAZw8gX9eEph6LPMCUJfyU9aQvqF9e0WFzlFUatxexUxDaYKsBfQqILLqsLPjIQ=w1855-h1857-rw-no" class="rounded-circle">
+              </div>
+              <div class="card-body">
+                <h5 class="text-truncate">Arya Rezza Anantya</h5>
+                <label>Supervisi</label>
+                <hr>
+                <a href="javascript:void(0);" class="btn btn-rounded btn-flat m-0">Keluar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /content -->
+      </div>
+    </main>
+    <footer>
+      
+    </footer>
+    <script type="text/javascript" src="vendors/mdbootstrap/js/jquery.min.js"></script>
+    <script type="text/javascript" src="vendors/mdbootstrap/js/popper.min.js"></script>
+    <script type="text/javascript" src="vendors/mdbootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="vendors/mdbootstrap/js/mdb.min.js"></script>
+    <script type="text/javascript" src="vendors/mdbootstrap/js/addons/dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/js/style.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        // dataTables
+        $('.dataTables').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+        // date picker
+        $('.datePicker').pickadate({
+          today: 'Sekarang',
+          clear: 'Bersih',
+          close: 'Batal'
+        });
+        // time picker
+        $('.timePicker').pickatime({
+          default: 'now'
+        });
+      });
+    </script>
+  </body>
+</html>
