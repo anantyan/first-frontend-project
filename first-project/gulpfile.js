@@ -1,61 +1,48 @@
-// script memanggil source npm
-var
-    gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    obfuscator = require('gulp-javascript-obfuscator'),
-    autoprefixer = require('gulp-autoprefixer'),
-    browserSync = require('browser-sync'),
-    runSequence = require('run-sequence')
-;
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const postcss = require('gulp-postcss');
+const precss = require('precss');
+const autoprefix = require('autoprefixer');
+const sync = require('browser-sync').create();
 
-// script untuk compiler css
-gulp.task('css', function() {
+const sass = () => {
     return gulp.src('./source/assets/css/**/*.scss')
-    .pipe(sass())
-    .pipe(autoprefixer({
-        browsers:['> 1%'],
-        cascade:false
-    }))
-    .on('error', console.error.bind(console))
-    .pipe(gulp.dest('./public/assets/css'))
-});
+        .pipe(sass())
+        .pipe(postcss([
+            precss(),
+            autoprefix()
+        ]))
+        .on('error', console.error.bind(console))
+        .pipe(gulp.dest('./public/assets/css'))
+        .pipe(sync.stream());
+};
 
-// script untuk compiler js
-gulp.task('js', function() {
+const js = () => {
     return gulp.src('./source/assets/js/**/*.js')
-    .pipe(obfuscator({
-        compact:true,
-        sourceMap:true,
-        stringArray:true,
-        stringArrayEncoding:true,
-        target:"browser"
-    }))
-    .on('error', console.error.bind(console))
-    .pipe(gulp.dest('./public/assets/js'))
-});
+        .on('error', console.error.bind(console))
+        .pipe(gulp.dest('./public/assets/js'))
+        .pipe(sync.stream());
+};
 
-// script untuk menjalankan browser-sync & output compiler css, js
-gulp.task('sync', function() {
-    browserSync.init({
-        server:{
-        baseDir:"./public/"
+const sync = () => {
+    sync.init({
+        server: {
+            baseDir: "./public"
         }
     })
-  
-    // script watch gulpjs
-    gulp.watch('./source/assets/css/**/*.css',['scss']);
-    gulp.watch('./source/assets/js/**/*.js',['js']);
 
-    gulp.watch('./public/assets/css/**/*.css').on('change',browserSync.reload);
-    gulp.watch('./public/assets/js/**/*.js').on('change',browserSync.reload);
-    gulp.watch('./public/*.html').on('change',browserSync.reload);
-});
+    gulp.watch('./source/assets/css/**/*.scss', sass);
+    gulp.watch('./source/assets/js/**/*.js', js);
 
-// script untuk menjalankan
-gulp.task('run', function() {
-    runSequence(
-        'css',
-        'js',
-        'sync'
-    )
-});
+    gulp.watch('./public/assets/css/**/*.css').on('change', sync.reload);
+    gulp.watch('./public/assets/js/**/*.js').on('change', sync.reload);
+    gulp.watch('./public/*.html').on('change', sync.reload);
+};
+
+const defaultTask = () => {
+    sass();
+    js();
+    sync();
+};
+
+exports.default = defaultTask;
