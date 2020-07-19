@@ -18,7 +18,7 @@
   "devDependencies": {
     "browser-sync": "^2.24.7",
     "electron": "^2.0.8",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-csso": "^3.0.1",
     "gulp-sass": "^4.0.1",
     "gulp-uglify": "^3.0.1",
