@@ -17,7 +17,7 @@
   "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.24.7",
-    "electron": "^2.0.8",
+    "electron": "^9.1.0",
     "gulp": "^4.0.2",
     "gulp-csso": "^3.0.1",
     "gulp-sass": "^4.0.1",
